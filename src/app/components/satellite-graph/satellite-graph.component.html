@@ -1,0 +1,16 @@
+
+<div [ngClass]="['gps__container']">
+        <div [chart]="chart" [ngClass]="['gps-graph']"></div>
+
+        <div [ngClass]="['gps__logger']">
+          <p [ngClass]="['logger__header']">Current Data:</p>
+          <p *ngFor='let item of currentGps' [ngClass]="['logger__paragraph']">
+            <span><b> ID: </b>{{ item.id }}; </span>
+            <span><b> TYPE: </b>{{ item.type }}; </span>
+            <span><b> ELEVATION: </b>{{ item.elevation }}; </span>
+            <span><b> AZIMUTH: </b>{{ item.azimuth }}; </span>
+            <span><b> SNR: </b>{{ item.snr }}; </span>
+          </p>
+        </div>
+        
+</div>

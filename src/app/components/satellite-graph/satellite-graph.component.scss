@@ -1,0 +1,25 @@
+.gps__container{
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width:660px;
+    .gps-graph{
+        width:100%;
+        height:600px;
+        padding: 30px;
+    }
+    
+    .gps__logger{
+        padding-left:117px;
+        width:100%;
+        .logger__header{
+            font-size: 23px;
+            font-weight: bold;
+        }
+        .logger__paragraph{
+            line-height: 0.7;
+            font-size: 16px;
+        }
+    }
+}
