@@ -144,7 +144,7 @@ export class SatelliteMapComponent implements OnInit {
         values.forEach(data => {
           data.coords = this.calcCoordinates([data.azimuth, data.elevation]);
         });
-       
+
         values.forEach(
           data => this.renderSatellite(data)
         );
@@ -171,15 +171,12 @@ export class SatelliteMapComponent implements OnInit {
 
 
 
-  this.chart.addSeries({
+    this.chart.addSeries({
       type: 'scatter',
-     
+      name: it.id.toString(),
       tooltip: {
-  headerFormat: '<b>ID:</b> {series.name.id}<br><b>Type:</b> {series.name.type}<br>',
-  pointFormat: '<b>Azimuth:</b> {series.name.azimuth} <br><b> Elevation:</b> {series.name.elevation}',
-      //  style: { fontSize: '18px' },
-      //   headerFormat: '<b>ID:</b> {series.name.id}<br><b>Type:</b> {series.name.type}<br>',
-      //   pointFormat: '<b>Azimuth:</b> {series.name.azimuth} <br><b> Elevation:</b> {series.name.elevation}',
+        headerFormat: '',
+        pointFormat: '<b>ID:</b> {series.name}<br><b>Type:</b>{point.name} '
       },
       color: it.type === 'GSV' ? 'red' : 'green',
       marker: {
@@ -193,17 +190,19 @@ export class SatelliteMapComponent implements OnInit {
         },
 
       },
+
       data: [
 
-        {x: it.coords[0],
+        {
+          x: it.coords[0],
           y: it.coords[1],
-
+          name: it.type
         }
       ]
 
     }, true, false);
   }
-  }
+}
 
 
 
