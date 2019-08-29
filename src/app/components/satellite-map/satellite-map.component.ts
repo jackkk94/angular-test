@@ -173,7 +173,7 @@ export class SatelliteMapComponent implements OnInit {
 
   this.chart.addSeries({
       type: 'scatter',
-      name: it,
+     
       tooltip: {
   headerFormat: '<b>ID:</b> {series.name.id}<br><b>Type:</b> {series.name.type}<br>',
   pointFormat: '<b>Azimuth:</b> {series.name.azimuth} <br><b> Elevation:</b> {series.name.elevation}',
